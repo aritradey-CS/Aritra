@@ -43,6 +43,11 @@ function Home() {
     }
     setExpanded(true);
   };
+  
+  const handleCollapseClick = () => {
+    setBlogs(initialTopBlogs);
+    setExpanded(false);
+  };
 
   return (
     <div className="home-container">

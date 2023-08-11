@@ -40,6 +40,7 @@ function BlogCardList({ topBlogs }) {
             content={blog.content}
             onReadMoreClick={() => handleBlogClick(blog)}
           />
+          
         </div>
       ))}
 
