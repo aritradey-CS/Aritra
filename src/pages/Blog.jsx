@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './Blog.css';
-import BlogPopup from '../components/BlogPopup'; // Adjust the import path
+import BlogPopup from './BlogPopup'; // Corrected import path
 
-function BlogPost({ title, content }) {
+function BlogPost({ title, content, onReadMoreClick }) {
   return (
     <div className="blog-post">
       <h2 className="blog-title">{title}</h2>
       <p className="blog-content">{content}</p>
-      {/* Update the button to open the popup */}
-      <button className="blog-button" onClick={() => handleBlogClick({ title, content })}>
+      {/* Update the button to trigger the parent's read more function */}
+      <button className="blog-button" onClick={onReadMoreClick}>
         Read More
       </button>
     </div>
@@ -34,6 +34,12 @@ function BlogCardList({ topBlogs }) {
         <div key={index} className="blog-card blog-card-appear">
           <h3>{blog.title}</h3>
           <p>{blog.content}</p>
+          {/* Pass the handleBlogClick function as a prop */}
+          <BlogPost
+            title={blog.title}
+            content={blog.content}
+            onReadMoreClick={() => handleBlogClick(blog)}
+          />
         </div>
       ))}
 
@@ -43,4 +49,4 @@ function BlogCardList({ topBlogs }) {
   );
 }
 
-export { BlogPost, BlogCardList }; // Export both components
+export { BlogCardList };
