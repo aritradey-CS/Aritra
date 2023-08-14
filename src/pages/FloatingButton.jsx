@@ -10,10 +10,7 @@ import {
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "./FloatingButton.css";
-import PostPopup from "./PostPopup";
-
-
-
+import PostPopup from "./PostPopup"; // Import the PostPopup component
 
 const options = [
   { icon: faEnvelope, action: "Contact" },
@@ -30,7 +27,7 @@ function FloatingButton() {
     setExpanded(!expanded);
   };
 
-  const handleOpenPostPopup = () => {
+  const handelOpenPostPopup = () => {
     setShowPostPopup(true);
   };
 
@@ -39,7 +36,6 @@ function FloatingButton() {
   };
 
   const handlePostSubmit = (post) => {
-    // Implement logic to save the post data as a word file
     console.log("Post submitted:", post);
   };
 
@@ -49,15 +45,8 @@ function FloatingButton() {
 
   return (
     <animated.div className="floating-button-container" style={containerProps}>
-      <div
-        className={`floating-button ${expanded ? "expanded" : ""}`}
-        onClick={handleToggle}
-      >
-        {expanded ? (
-          <FontAwesomeIcon icon={faTimes} />
-        ) : (
-          <FontAwesomeIcon icon={faCircle} />
-        )}
+      <div className={`floating-button ${expanded ? "expanded" : ""}`} onClick={handleToggle}>
+        {expanded ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faCircle} />}
       </div>
       {expanded && (
         <div className="options-container">
@@ -65,16 +54,14 @@ function FloatingButton() {
             <div
               key={index}
               className="option"
-              onClick={option.action === "Post" ? handleOpenPostPopup : () => console.log(option.action)}
+              onClick={option.action === "Post" ? handelOpenPostPopup : () => console.log(option.action)}
             >
               <FontAwesomeIcon icon={option.icon} />
             </div>
           ))}
         </div>
       )}
-      {showPostPopup && (
-        <PostPopup onClose={handleClosePostPopup} onSubmit={handlePostSubmit} />
-      )}
+      {showPostPopup && <PostPopup onClose={handleClosePostPopup} onSubmit={handlePostSubmit} />}
     </animated.div>
   );
 }

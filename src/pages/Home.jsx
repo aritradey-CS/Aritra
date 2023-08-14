@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Home.css";
 import { BlogCardList } from "../pages/Blog";
 import { animateScroll as scroll } from "react-scroll";
-import FloatingButton from "./FloatingButton"; // Import the FloatingButton component
+import FloatingButton from "./FloatingButton";
+import PostPopup from "./PostPopup"; // Import the PostPopup component
 
 const initialTopBlogs = [
   { title: "Top Blog 1", content: "Lorem ipsum dolor sit amet." },
@@ -11,29 +12,13 @@ const initialTopBlogs = [
 ];
 
 const additionalBlogs = [
-  {
-    title: "Additional Blog 1",
-    content: "Additional content for Blog 1 goes here.",
-  },
-  {
-    title: "Additional Blog 2",
-    content: "Additional content for Blog 2 goes here.",
-  },
-  {
-    title: "Additional Blog 3",
-    content: "Additional content for Blog 1 goes here.",
-  },
-  {
-    title: "Additional Blog 4",
-    content: "Additional content for Blog 2 goes here.",
-  },
-  // Add more demo blogs as needed
-  // Add more demo blogs as needed
+  // ... (additional blog data)
 ];
 
 function Home() {
   const [expanded, setExpanded] = useState(false);
   const [blogs, setBlogs] = useState(initialTopBlogs);
+  const [showPostPopup, setShowPostPopup] = useState(false);
 
   const handleExploreClick = () => {
     if (!expanded) {
@@ -48,18 +33,26 @@ function Home() {
     setExpanded(false);
   };
 
-// const FloatingButton = () => {
+  const handleOpenPostPopup = () => {
+    setShowPostPopup(true);
+  };
 
-// }
+  const handleClosePostPopup = () => {
+    setShowPostPopup(false);
+  };
+
+  const handlePostSubmit = (post) => {
+    // Implement logic to save the post data
+    console.log("Post submitted:", post);
+  };
 
   return (
     <div className="home-container">
       <h2 className="home-title">Welcome aspirants!</h2>
       <p className="home-content">
         I am an engineering student in the Department of Computer Science, I
-        have completed my diploma course in 2019 and graduate in 2022 now doing
-        Master's. from my blog, you can get informations for digital
-        technologies which are may included in your course or beyond!
+        have completed my diploma course in 2019 and graduated in 2022. I am now pursuing my Master's. From my blog, you can get information on digital
+        technologies that are relevant to your course and beyond!
       </p>
       <button
         className={`home-button ${expanded ? "expanded" : ""}`}
@@ -71,14 +64,19 @@ function Home() {
       {expanded && (
         <button
           className="home-button2"
-          onClick={() => handleCollapseClick(setBlogs, setExpanded)}
+          onClick={handleCollapseClick}
         >
           Collapse
         </button>
       )}
-      <FloatingButton />
+
+      <FloatingButton onPostClick={handleOpenPostPopup} />
       <h3>Top Blogs</h3>
       <BlogCardList topBlogs={blogs} />
+
+      {showPostPopup && (
+        <PostPopup onClose={handleClosePostPopup} onSubmit={handlePostSubmit} />
+      )}
     </div>
   );
 }
