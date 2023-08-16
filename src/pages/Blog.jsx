@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Blog.css';
-
+import BlogPopup from '../components/BlogPopup'; // Adjust the import path
 
 function BlogPost({ title, content }) {
   return (
     <div className="blog-post">
       <h2 className="blog-title">{title}</h2>
       <p className="blog-content">{content}</p>
-      <button className="blog-button">Read More</button>
+      {/* Update the button to open the popup */}
+      <button className="blog-button" onClick={() => handleBlogClick({ title, content })}>
+        Read More
+      </button>
     </div>
   );
 }
 
 function BlogCardList({ topBlogs }) {
+  const [selectedBlog, setSelectedBlog] = useState(null);
+
+  // Function to handle the blog card click and open the popup
+  const handleBlogClick = (blog) => {
+    setSelectedBlog(blog);
+  };
+
+  // Function to close the popup
+  const handleClosePopup = () => {
+    setSelectedBlog(null);
+  };
+
   return (
     <div className="blog-card-container">
       {topBlogs.map((blog, index) => (
@@ -21,6 +36,9 @@ function BlogCardList({ topBlogs }) {
           <p>{blog.content}</p>
         </div>
       ))}
+
+      {/* Render the popup when a blog is selected */}
+      {selectedBlog && <BlogPopup blog={selectedBlog} onClose={handleClosePopup} />}
     </div>
   );
 }
