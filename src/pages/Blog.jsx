@@ -1,14 +1,14 @@
-// Home.js
 import React from 'react';
-import './Home.css';
+import './Blog.css';
 
-function Home() {
+function BlogPost({ title, content }) {
   return (
-    <div className="home-container">
-      <h2>Welcome to my blog!</h2>
-      <p>This is the home page content.</p>
+    <div className="blog-post">
+      <h2 className="blog-title">{title}</h2>
+      <p className="blog-content">{content}</p>
+      <button className="blog-button">Read More</button>
     </div>
   );
 }
 
-export default Home;
+export default BlogPost;
