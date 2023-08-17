@@ -1,0 +1,33 @@
+/* src/styles.css */
+
+/* Mobile-first responsive design */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Add common styles for headings, paragraphs, links, etc. */
+  
+  /* Responsive layout adjustments */
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    /* Medium devices (tablets, landscape phones) */
+    .container {
+      width: 80%;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    /* Large devices (desktops) */
+    .container {
+      width: 70%;
+    }
+  }
+  
+  /* Add more media queries as needed for larger devices */
+  
