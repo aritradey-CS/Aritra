@@ -1,10 +1,14 @@
+// Example for animating the header
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
 
 function Header() {
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+
   return (
-    <header>
+    <animated.header style={props}>
       <h1>My Personal Blog</h1>
-    </header>
+    </animated.header>
   );
 }
 
