@@ -1,19 +1,16 @@
-import React from "react";
-import { Router, Routes, Route } from "react-router-dom";
-import './styles.css'; //Imported as the global styles
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import Blog from "./pages/Blog";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Blog from './pages/Blog'; // Import your Blog component
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
-        <div>
-          <Header />
-          <Route exact path="/" component={Home} />
-          <Route path="/blog" component={Blog} />
-        </div>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </Router>
   );
