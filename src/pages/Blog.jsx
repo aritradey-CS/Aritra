@@ -1,6 +1,7 @@
 import React from 'react';
 import './Blog.css';
 
+
 function BlogPost({ title, content }) {
   return (
     <div className="blog-post">
@@ -11,4 +12,17 @@ function BlogPost({ title, content }) {
   );
 }
 
-export default BlogPost;
+function BlogCardList({ topBlogs }) {
+  return (
+    <div className="blog-card-container">
+      {topBlogs.map((blog, index) => (
+        <div key={index} className="blog-card blog-card-appear">
+          <h3>{blog.title}</h3>
+          <p>{blog.content}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export { BlogPost, BlogCardList }; // Export both components
