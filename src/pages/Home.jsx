@@ -55,12 +55,16 @@ function Home() {
         This is the home page content. Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Sed vel urna quis felis posuere interdum a non erat.
       </p>
-      <button className="home-button" onClick={handleExploreClick}>
-        Explore
-      </button>
+      <button
+  className={`home-button ${expanded ? 'expanded' : ''}`}
+  onClick={handleExploreClick}
+>
+  Explore
+</button>
+
       {expanded && (
         <button
-          className="home-button"
+          className="home-button2"
           onClick={() => handleCollapseClick(setBlogs, setExpanded)}
         >
           Collapse

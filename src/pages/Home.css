@@ -1,9 +1,19 @@
 /* Home.css */
 .home-container {
-    padding: 2rem;
-    text-align: center;
-  }
-  
+  position: relative;
+}
+  /* Style the Collapse button */
+.collapse-button {
+  position:sticky;
+  bottom: 20px; /* Adjust the value to your preference */
+  right: 20px; /* Adjust the value to your preference */
+  background-color: #f44336; /* Red color as an example */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
   .home-title {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -24,8 +34,53 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+  .home-button2 {
+    position:static;
+    align-items: end;
+    justify-content: end;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
   
   .home-button:hover {
     background-color: #0056b3;
   }
-  
+  /* Home.css */
+
+/* ... (your existing styles) */
+
+/* Style the Collapse button */
+.collapse-button {
+  position: sticky;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style the Explore button when the Collapse button is visible */
+.home-button.expanded {
+  position: sticky;
+  bottom: 20px;
+  right: calc(20px + 150px); /* Adjust the value based on Collapse button width */
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ... (other styles) */
