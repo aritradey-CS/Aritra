@@ -2,14 +2,8 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import './Header.css';
 import profileImage from '../assets/profile.jpg'; // Import your profile image
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome-free';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome-free';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
 
 function Header() {
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
