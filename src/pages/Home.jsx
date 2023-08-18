@@ -58,12 +58,14 @@ function Home() {
       <button className="home-button" onClick={handleExploreClick}>
         Explore
       </button>
-      <button
-        className="home-button"
-        onClick={() => handleCollapseClick(setBlogs, setExpanded)}
-      >
-        Collapse
-      </button>
+      {expanded && (
+        <button
+          className="home-button"
+          onClick={() => handleCollapseClick(setBlogs, setExpanded)}
+        >
+          Collapse
+        </button>
+      )}
       <h3>Top Blogs</h3>
       <BlogCardList topBlogs={blogs} />
     </div>
