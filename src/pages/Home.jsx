@@ -50,17 +50,19 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h2 className="home-title">Welcome to My Blog!</h2>
+      <h2 className="home-title">Welcome aspirants!</h2>
       <p className="home-content">
-        This is the home page content. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Sed vel urna quis felis posuere interdum a non erat.
+        I am an engineering student in the Department of Computer Science, I
+        have completed my diploma course in 2019 and graduate in 2022 now doing Master's. from my
+        blog, you can get informations for digital technologies which are may
+        included in your course or beyond!
       </p>
       <button
-  className={`home-button ${expanded ? 'expanded' : ''}`}
-  onClick={handleExploreClick}
->
-  Explore
-</button>
+        className={`home-button ${expanded ? "expanded" : ""}`}
+        onClick={handleExploreClick}
+      >
+        Explore
+      </button>
 
       {expanded && (
         <button
