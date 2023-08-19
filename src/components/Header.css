@@ -31,10 +31,10 @@ header {
   /* Header.css */
   .header-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
-    padding: 0px;
-    margin: 0px;
+    padding-top: 1vh;
+    margin-top: -5vh;
 }
 
 .profile-image-container {
@@ -74,7 +74,9 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-p {
+.p {
+  margin-top: -1vh;
+  padding-top: 0rem;
   font-size: 1rem;
   color: #888;
   margin-bottom: 0.5rem;
