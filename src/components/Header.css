@@ -1,40 +1,40 @@
 /* src/components/Header.css */
 header {
   height: 80pt;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  /* src/pages/Home.css */
-  .home-container {
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  /* src/pages/Blog.css */
-  .blog-post {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .blog-post:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Add similar styles for other components */
-  /* Header.css */
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 1vh;
-    margin-top: -5vh;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* src/pages/Home.css */
+.home-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* src/pages/Blog.css */
+.blog-post {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-post:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add similar styles for other components */
+/* Header.css */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1vh;
+  margin-top: -5vh;
 }
 
 .profile-image-container {
@@ -126,4 +126,3 @@ h1 {
   height: 10px;
   font-size: 1.2rem;
 }
-
