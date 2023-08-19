@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import './FloatingButton.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPen, faComment, faInfo, faTimes, faCircle } from "@fortawesome/free-solid-svg-icons"; // Import the correct icons
+import "./FloatingButton.css";
 
 const options = [
-  { icon: "✉️", action: "Contact" },
-  { icon: "📝", action: "Post" },
-  { icon: "💬", action: "Chat" },
-  { icon: "ℹ️", action: "About" },
+  { icon: faEnvelope, action: "Contact" },
+  { icon: faPen, action: "Post" },
+  { icon: faComment, action: "Chat" },
+  { icon: faInfo, action: "About" },
 ];
 
 function FloatingButton() {
@@ -23,13 +25,13 @@ function FloatingButton() {
   return (
     <animated.div className="floating-button-container" style={containerProps}>
       <div className={`floating-button ${expanded ? "expanded" : ""}`} onClick={handleToggle}>
-        {expanded ? "✕" : "⚫"}
+        {expanded ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faCircle} />}
       </div>
       {expanded && (
         <div className="options-container">
           {options.map((option, index) => (
             <div key={index} className="option" onClick={() => console.log(option.action)}>
-              {option.icon}
+              <FontAwesomeIcon icon={option.icon} />
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import { BlogCardList } from "../pages/Blog";
 import { animateScroll as scroll } from "react-scroll";
-import { useSpring } from "react-spring"; // Removed 'animated'
+import FloatingButton from "./FloatingButton"; // Import the FloatingButton component
 
 const initialTopBlogs = [
   { title: "Top Blog 1", content: "Lorem ipsum dolor sit amet." },
@@ -48,6 +48,10 @@ function Home() {
     setExpanded(false);
   };
 
+// const FloatingButton = () => {
+
+// }
+
   return (
     <div className="home-container">
       <h2 className="home-title">Welcome aspirants!</h2>
@@ -72,6 +76,7 @@ function Home() {
           Collapse
         </button>
       )}
+      <FloatingButton />
       <h3>Top Blogs</h3>
       <BlogCardList topBlogs={blogs} />
     </div>
