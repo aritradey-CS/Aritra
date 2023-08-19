@@ -23,6 +23,18 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.home-button2 {
+  
+  margin-left: 1rem;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
 .home-button.expanded {
   position: sticky;
@@ -37,6 +49,11 @@
   transition: background-color 0.3s ease;
 }
 
+
 .home-button:hover {
   background-color: #0056b3;
 }
+.home-button2:hover {
+  background-color: #0056b3;
+}
+
