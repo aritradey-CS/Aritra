@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Blog.css';
 import BlogPopup from './BlogPopup'; // Corrected import path
-
+import BlogPostForm from "./BlogPostForm"; // Update the import path
 function BlogPost({ title, content, onReadMoreClick }) {
   return (
     <div className="blog-post">

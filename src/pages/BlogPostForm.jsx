@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./BlogPostForm.css";
 import BlogPost from "../components/BlogPost"; // Assuming you have a BlogPost component
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons"; // Import the close icon
 
 function BlogList() {
   const [posts, setPosts] = useState([]);
@@ -66,8 +68,9 @@ function BlogPostForm({ onSubmit, onClose }) {
   return (
     <div className="blog-post-form">
       <h2>Create a New Post</h2>
+      {/* Close button */}
       <button className="close-button" onClick={onClose}>
-        Close
+        <FontAwesomeIcon icon={faTimes} /> Close
       </button>
       <div className="form-group">
         <label>Name:</label>
