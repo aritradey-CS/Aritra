@@ -6,7 +6,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 600px;
-  margin: -190px 3px 4px -1rem;
+  margin: -191px 100px 25px -2rem;
   animation: fade-in 0.5s ease-in-out; /* Animation effect */
 }
 
@@ -22,7 +22,7 @@ textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin-bottom: 15px;
+  margin: 0px 0 0 -10px
 }
 
 .submit-button {
