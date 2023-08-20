@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Docxtemplater from "docxtemplater";
-import PizZip from "pizzip";
 import "./BlogPostForm.css";
-import BlogPost from "../components/BlogPost";
+import BlogPost from "../components/BlogPost"; // Assuming you have a BlogPost component
 
 function BlogList() {
   const [posts, setPosts] = useState([]);
@@ -41,19 +39,28 @@ function BlogPostForm({ onSubmit }) {
 
     onSubmit(post);
 
-    // Generate a word document
-    const template = require("./blog_template.docx");
-    const contentTemplate = new Uint8Array(template);
-    const doc = new Docxtemplater(new PizZip(contentTemplate));
-    doc.setData({ name, contact, category, content });
-    doc.render();
+    // Generate content for the Word document
+    const wordContent = `
+      Name: ${name}
+      Contact Details: ${contact}
+      Category: ${category}
+      Post Content: ${content}
+    `;
 
-    // Download the generated word document
-    const blob = doc.getZip().generate({ type: "blob" });
+    // Create a Blob with the Word content
+    const blob = new Blob([wordContent], { type: "application/msword" });
+
+    // Create a URL for the Blob
+    const blobUrl = URL.createObjectURL(blob);
+
+    // Create a link for downloading the Word document
     const link = document.createElement("a");
-    link.href = window.URL.createObjectURL(blob);
+    link.href = blobUrl;
     link.download = "blog_post.docx";
     link.click();
+
+    // Clean up
+    URL.revokeObjectURL(blobUrl);
   };
 
   return (
