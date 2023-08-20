@@ -53,7 +53,7 @@ function FloatingButton() {
           {options.map((option, index) => (
             <div
               key={index}
-              className="option"
+              className={`option ${option.action.toLowerCase()}`}
               onClick={option.action === "Post" ? handelOpenPostPopup : () => console.log(option.action)}
             >
               <FontAwesomeIcon icon={option.icon} />
