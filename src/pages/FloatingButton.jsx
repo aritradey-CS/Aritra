@@ -10,7 +10,7 @@ import {
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "./FloatingButton.css";
-import PostPopup from "./PostPopup"; // Import the PostPopup component
+import PostPopup from "./BlogPostForm"; // Import the PostPopup component
 
 const options = [
   { icon: faEnvelope, action: "Contact" },

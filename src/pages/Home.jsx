@@ -3,7 +3,7 @@ import "./Home.css";
 import { BlogCardList } from "../pages/Blog";
 import { animateScroll as scroll } from "react-scroll";
 import FloatingButton from "./FloatingButton";
-import PostPopup from "./PostPopup"; // Import the PostPopup component
+import PostPopup from "./BlogPostForm"; // Import the PostPopup component
 
 const initialTopBlogs = [
   { title: "Top Blog 1", content: "Lorem ipsum dolor sit amet." },
@@ -12,6 +12,12 @@ const initialTopBlogs = [
 ];
 
 const additionalBlogs = [
+  { title: "Top Blog 3", content: "Lorem ipsum dolor sit amet." },
+  { title: "Top Blog 4", content: "Lorem ipsum dolor sit amet." },
+  { title: "Top Blog 5", content: "Lorem ipsum dolor sit amet." },
+  { title: "Top Blog 6", content: "Lorem ipsum dolor sit amet." },
+  { title: "Top Blog 7", content: "Lorem ipsum dolor sit amet." },
+
   // ... (additional blog data)
 ];
 

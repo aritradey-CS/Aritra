@@ -1,61 +1,57 @@
 /* FloatingButton.css */
 
 .floating-button-container {
-    position: fixed;
-    bottom: 40px;
-    /* Choose either left or right */
-    /* left: 40px; */
-    right: 40px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* ... (rest of your CSS remains unchanged) */
-  
-  .floating-button {
-    width: 60px;
-    height: 60px;
-    background-color: #007bff;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .floating-button.expanded {
-    background-color: #f44336;
-  }
-  
-  .options-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .option {
-    width: 40px;
-    height: 40px;
-    background-color: #007bff;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .option:hover {
-    background-color: #0056b3;
-  }
-  
+  position: fixed;
+  bottom: 40px;
+
+  right: 40px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.floating-button {
+  width: 60px;
+  height: 60px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.floating-button.expanded {
+  background-color: #f44336;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.option {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.option:hover {
+  background-color: #0056b3;
+}
