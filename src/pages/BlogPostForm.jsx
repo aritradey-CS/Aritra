@@ -1,8 +1,29 @@
 import React, { useState } from "react";
+import Docxtemplater from "docxtemplater";
+import PizZip from "pizzip";
 import "./BlogPostForm.css";
-import BlogPost from "../components/BlogPost"; // Assuming you have a BlogPost component
-import NewBlogPostForm from "./BlogPostForm"; // Import the new component
+import BlogPost from "../components/BlogPost";
 
+function BlogList() {
+  const [posts, setPosts] = useState([]);
+
+  const handleNewPostSubmit = (newPost) => {
+    setPosts([...posts, newPost]);
+  };
+
+  return (
+    <div className="blog-list">
+      <div className="blog-section">
+        {posts.map((post, index) => (
+          <BlogPost key={index} post={post} />
+        ))}
+      </div>
+      <div className="blog-form-section">
+        <BlogPostForm onSubmit={handleNewPostSubmit} />
+      </div>
+    </div>
+  );
+}
 
 function BlogPostForm({ onSubmit }) {
   const [name, setName] = useState("");
@@ -11,7 +32,6 @@ function BlogPostForm({ onSubmit }) {
   const [content, setContent] = useState("");
 
   const handleSubmit = () => {
-    // Prepare the post content and data
     const post = {
       name,
       contact,
@@ -19,32 +39,25 @@ function BlogPostForm({ onSubmit }) {
       content,
     };
 
-    // Call the onSubmit callback to handle post submission
     onSubmit(post);
+
+    // Generate a word document
+    const template = require("./blog_template.docx");
+    const contentTemplate = new Uint8Array(template);
+    const doc = new Docxtemplater(new PizZip(contentTemplate));
+    doc.setData({ name, contact, category, content });
+    doc.render();
+
+    // Download the generated word document
+    const blob = doc.getZip().generate({ type: "blob" });
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = "blog_post.docx";
+    link.click();
   };
 
-
-  function BlogList() {
-    const [posts, setPosts] = useState([]); // Assume you have an array of blog posts
-  
-    const handleNewPostSubmit = (newPost) => {
-      // Add the new post to the posts array
-      setPosts([...posts, newPost]);
-    };
-
-
   return (
-    <div className="blog-list">
-    <div className="blog-section">
-      {/* Display existing blog posts */}
-      {posts.map((post, index) => (
-        <BlogPost key={index} post={post} />
-      ))}
-    </div>
-
-    <div className="blog-form-section">
-        {/* Include the BlogPostForm component here */}
-        <div className="blog-post-form">
+    <div className="blog-post-form">
       <h2>Create a New Post</h2>
       <div className="form-group">
         <label>Name:</label>
@@ -78,15 +91,10 @@ function BlogPostForm({ onSubmit }) {
         />
       </div>
       <button className="submit-button" onClick={handleSubmit}>
-        Submit
+        Submit and Download as Word
       </button>
     </div>
-        <BlogPostForm onSubmit={handleNewPostSubmit} />
-      </div>
-    </div>
-
-);
-}
+  );
 }
 
 export default BlogList;
