@@ -23,7 +23,7 @@ function BlogList() {
   );
 }
 
-function BlogPostForm({ onSubmit }) {
+function BlogPostForm({ onSubmit, onClose }) {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [category, setCategory] = useState("");
@@ -66,6 +66,9 @@ function BlogPostForm({ onSubmit }) {
   return (
     <div className="blog-post-form">
       <h2>Create a New Post</h2>
+      <button className="close-button" onClick={onClose}>
+        Close
+      </button>
       <div className="form-group">
         <label>Name:</label>
         <input
