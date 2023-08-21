@@ -39,6 +39,27 @@ textarea {
   background-color: #0056b3;
 }
 
+/* BlogPostForm.css */
+/* ... (your existing styles) */
+
+.close-button {
+  background-color: #dc3545; /* Red color */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close-button:hover {
+  background-color: #c82333; /* Darker red color on hover */
+}
+
+
 /* Animation Keyframes */
 @keyframes fade-in {
   0% {
